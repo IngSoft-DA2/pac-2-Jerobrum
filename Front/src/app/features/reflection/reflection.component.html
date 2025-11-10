@@ -1,0 +1,21 @@
+<div class="container text-center mt-5">
+  <h2 class="mb-3">Assemblies con ImporterInterface</h2>
+  <p>Accesos a esta ruta: {{ counter.count() }}</p>
+
+  <button class="btn btn-primary" (click)="loadDlls()">Cargar DLLs</button>
+
+  <div class="mt-3" *ngIf="service.isLoading()">Cargando...</div>
+  <div class="mt-3 text-danger" *ngIf="service.error()">{{ service.error() }}</div>
+  <div
+    class="mt-3"
+    *ngIf="!service.isLoading() && service.dlls().length === 0 && !service.error()"
+  >
+    No se encontraron DLLs válidas.
+  </div>
+
+  <ul class="list-group mt-3" *ngIf="service.dlls().length > 0">
+    <li *ngFor="let dll of service.dlls()" class="list-group-item">
+      {{ dll }}
+    </li>
+  </ul>
+</div>
