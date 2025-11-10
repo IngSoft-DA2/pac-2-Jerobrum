@@ -2,18 +2,32 @@ import { Injectable, signal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class ReflectionCounterService {
-  count = signal(0);
+  // valor inicial desde localStorage
+  count = signal<number>(this.getStoredCount());
 
   constructor() {
-    console.log('🧠 Nueva instancia de ReflectionCounterService creada');
+    console.log('🧠 Servicio inicializado. Valor inicial:', this.count());
+  }
+
+  private getStoredCount(): number {
+    const stored = localStorage.getItem('reflectionCount');
+    return stored ? parseInt(stored, 10) : 0;
+  }
+
+  private saveCount() {
+    localStorage.setItem('reflectionCount', this.count().toString());
   }
 
   increment() {
-    this.count.update(c => c + 1);
-    console.log('🔢 Contador incrementado. Nuevo valor:', this.count());
+    const newValue = this.count() + 1;
+    this.count.set(newValue);
+    this.saveCount();
+    console.log('🧮 Nuevo valor del contador persistente:', newValue);
   }
 
   reset() {
     this.count.set(0);
+    localStorage.setItem('reflectionCount', '0');
+    console.log('🔁 Contador reseteado a 0');
   }
 }
