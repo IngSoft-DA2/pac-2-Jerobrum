@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d721936c-63b9-43e3-9e75-a32003a1de2f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BackApi/Controllers/ReflectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BackApi/Controllers/ReflectionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-    </list>
+    <list default="true" id="d721936c-63b9-43e3-9e75-a32003a1de2f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762813173041</updated>
-      <workItem from="1762813175590" duration="2406000" />
+      <workItem from="1762813175590" duration="2899000" />
     </task>
     <servers />
   </component>
